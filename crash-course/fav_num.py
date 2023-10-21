@@ -18,7 +18,7 @@ def add_number(path):
     return number
 
 def read_number():
-    path = Path('fav_number.json')
+    path = Path('outputs/fav_number.json')
     number = get_stored_number(path)
     if number:
         print(f'I know your favorite number! It is: {number}')

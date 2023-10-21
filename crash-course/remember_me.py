@@ -26,7 +26,7 @@ def get_new_user(path):
 
 def greet_user():
     """Greet the user by name."""
-    path = Path('user.json')
+    path = Path('outputs/user.json')
     user = get_stored_user(path)
     if user:
         right_account = input(f'Is {user["name"]} your name? (y/n) ').lower()
@@ -35,6 +35,9 @@ def greet_user():
         else:
             user = get_new_user(path)
             print(f'we will remember you, when you come back, {user["name"]}')
+    else:
+        user = get_new_user(path)
+        print(f'we will remember you, when you come back, {user["name"]}')
 
 
 greet_user()
